@@ -11,6 +11,17 @@ type User {
     updated_at: DateTime!
 }
 
+type CreateUser {
+    name: String!
+    email: String!
+    message: String!
+}
+
+type UserLogin {
+    token: String!
+    tokenType: String!
+}
+
 type Query {
     users: [User!] @paginate @guard
     user(id: ID! @eq): User @find @guard
@@ -35,4 +46,10 @@ type Mutation {
         @field(
             resolver: "App\\Http\\Controllers\\SevezMedicalBackend\\MedicalController@storeGraphQLMedicalReport"
         )
+
+    registerUser(name: String! email: String! password: String!):CreateUser! @field(
+            resolver: "App\\Http\\Controllers\\SevezMedicalBackend\\UserController@registerQLUser"
+        )
+    Login(email: String! password: String!):UserLogin @field(
+            resolver: "App\\Http\\Controllers\\SevezMedicalBackend\\UserController@loginQLUser")
 }
