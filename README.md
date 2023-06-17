@@ -14,4 +14,4 @@ To get the token , register a user and login to generate the token
 All Authencations are bearer
 
 # Example Authorization Header For GraphQL
-Authorization : { "Authorization" : "Bearer 8|nN1P8kBoSkjbk4uptDJ7rWD92JIO9EIkphtXd1NC" }
+Authorization : { "Authorization" : "Bearer 1|vbiEw20CFj0h29VGovF625scbyDB888xiuGzo4iQ" }
