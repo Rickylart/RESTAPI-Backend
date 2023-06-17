@@ -11,3 +11,4 @@ For Graphql playground visit /graphiql
 # Note
 All requests uses token bearer for authencation
 To get the token , register a user and login to generate the token
+All Authencations are bearer
