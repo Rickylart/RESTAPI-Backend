@@ -1,0 +1,251 @@
+{
+	"info": {
+		"_postman_id": "214c9aa2-9836-4285-8191-be14e44ce2c3",
+		"name": "HTTPS Requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6683121"
+	},
+	"item": [
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "test1@test.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Rick Lartey",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "test2@test.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Medical Report",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "6|Q5zzQXVplswFyIM25YGW9wjSMNemWjs0zwABYGp0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "patient_id",
+							"value": "7",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/get_patient_medical_reports",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"get_patient_medical_reports"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add User Medical Report",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "5|oPVbeh8xu9Qtp5pTaveUhGraMKcBlnScbfQ1OOns",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "patient_name",
+							"value": "Test Name",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "xray[]",
+							"value": "toes",
+							"type": "text"
+						},
+						{
+							"key": "xray[]",
+							"value": "fingers",
+							"type": "text"
+						},
+						{
+							"key": "ultra_scan[]",
+							"value": "Breast",
+							"type": "text"
+						},
+						{
+							"key": "ultra_scan[]",
+							"value": "Pelvis",
+							"type": "text"
+						},
+						{
+							"key": "ct_scan",
+							"value": "yes",
+							"type": "text"
+						},
+						{
+							"key": "mri",
+							"value": "no",
+							"type": "text"
+						},
+						{
+							"key": "ultra_scan[]",
+							"value": "Yahoooo",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/store_medical_report",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"store_medical_report"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User Medical Report",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "5|oPVbeh8xu9Qtp5pTaveUhGraMKcBlnScbfQ1OOns",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/delete_medical_report/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"delete_medical_report",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
