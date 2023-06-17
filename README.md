@@ -11,3 +11,7 @@ For Graphql playground visit /graphiql
 # Note
 All requests uses token bearer for authencation
 To get the token , register a user and login to generate the token
+All Authencations are bearer
+
+# Example Authorization Header For GraphQL
+Authorization : { "Authorization" : "Bearer 1|vbiEw20CFj0h29VGovF625scbyDB888xiuGzo4iQ" }
